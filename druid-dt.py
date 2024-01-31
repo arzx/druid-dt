@@ -8,11 +8,11 @@ class Druid:
         self.max_depth = max_depth
         self.min_examples = min_examples
 
-    def entropy(self, class_probabilities:list):
+    def entropy(self,p, class_probabilities:list):
         return sum([-p_i * np.log2(p_i) for p_i in class_probabilities if p > 0])
 
-    def information_gain():
-        pass
+    def information_gain(entropy, class_probabilities):
+        return entropy() - sum([p * entropy() for p in class_probabilities])
 
     def gini_index(p):
         return 1 - sum([p_i ** 2 for p_i in p])
